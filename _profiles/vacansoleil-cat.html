@@ -16,7 +16,7 @@ default: true
 # with a minimum value of 12, as only two scheduled tests per day are allowed.
 # To disabled repeated tests, simply remove this property from the profile.
 #
-interval: 12
+interval: 24
 
 #
 # WebPageTest test parameters.
@@ -27,7 +27,7 @@ interval: 12
 parameters:
   connectivity: "3G"
   location: "Amsterdam:Chrome"
-  runs: 1
+  runs: 3
   url: "https://www.vacansoleil.nl/camping/frankrijk/"
 
 #
