@@ -24,11 +24,16 @@ interval: 24
 #
 # https://www.npmjs.com/package/webpagetest
 #
+# Locations: https://www.webpagetest.org/getLocations.php?f=html&k=A
+#
 parameters:
   connectivity: "3G"
   location: "Amsterdam_IISpeed:Chrome"
-  runs: 3
   url: "https://www.vacansoleil.nl"
+  firstViewOnly: true
+  runs: 3
+  video: true
+  block: "stats.decadecity.net www.google-analytics.com"
 
 #
 # The URL of the WebPageTest instance to be used with this profile. Please note that
@@ -47,13 +52,13 @@ parameters:
 #
 # https://github.com/speedtracker/speedtracker-api/blob/master/lib/SpeedTracker.js#L18-L37
 #
-#budgets:
-#  -
-#    metric: TTFB
-#    max: 600
-#    alerts: ["emailAlert", "slackAlert"]
-#  -
-#    metric: firstPaint
-#    max: 2000
-#    alerts: ["slackAlert"]
+budgets:
+  -
+    metric: TTFB
+    max: 3000
+    alerts: ["emailAlert"]
+  -
+    metric: firstPaint
+    max: 3250
+    alerts: ["emailAlert"]
 ---
